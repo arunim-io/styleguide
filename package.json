@@ -1,0 +1,16 @@
+{
+  "name": "arunim-styleguide",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "husky install"
+  },
+  "private": true,
+  "devDependencies": {
+    "@commitlint/cli": "^17.6.3",
+    "@commitlint/config-conventional": "^17.6.3",
+    "husky": "^8.0.0",
+    "nx": "16.1.4",
+    "nx-cloud": "latest"
+  }
+}
