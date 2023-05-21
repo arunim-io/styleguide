@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "allowJs": true,
+    "emitDeclarationOnly": true
+  },
+  "include": ["configs/*.js"]
+}

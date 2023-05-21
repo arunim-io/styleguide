@@ -1,0 +1,24 @@
+{
+  "name": "eslint-config-arunim",
+  "version": "0.0.0",
+  "main": "./configs/base.js",
+  "files": [
+    "./configs"
+  ],
+  "types": "./configs",
+  "scripts": {
+    "build": "tsc -p ./"
+  },
+  "peerDependencies": {
+    "@typescript-eslint/eslint-plugin": "latest",
+    "@typescript-eslint/parser": "latest",
+    "eslint": "^8",
+    "eslint-config-prettier": "latest",
+    "eslint-plugin-jsonc": "latest",
+    "eslint-plugin-prettier": "latest",
+    "eslint-plugin-unicorn": "latest"
+  },
+  "devDependencies": {
+    "@types/eslint": "~8.37.0"
+  }
+}

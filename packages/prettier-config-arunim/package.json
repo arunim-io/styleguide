@@ -1,0 +1,18 @@
+{
+  "name": "prettier-config-arunim",
+  "version": "0.0.0",
+  "main": "./configs/base.js",
+  "types": "./configs",
+  "scripts": {
+    "build": "tsc -p ./"
+  },
+  "files": [
+    "./configs"
+  ],
+  "peerDependencies": {
+    "prettier": "^2"
+  },
+  "devDependencies": {
+    "@types/prettier": "^2.7.2"
+  }
+}
