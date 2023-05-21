@@ -1,4 +1,4 @@
 {
-  "name": "prettier-config-arunim",
+  "name": "prettier-config",
   "$schema": "../../node_modules/nx/schemas/project-schema.json"
 }

@@ -1,0 +1,43 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "plugin:unicorn/recommended",
+    "plugin:jsonc/recommended-with-jsonc",
+    "plugin:jsonc/prettier",
+    "plugin:tailwindcss/recommended",
+    "next/core-web-vitals"
+  ],
+  "overrides": [
+    {
+      "files": ["*.json", "*.json5", "*.jsonc"],
+      "parser": "jsonc-eslint-parser"
+    }
+  ],
+  "plugins": ["simple-import-sort"],
+  "rules": {
+    "prettier/prettier": ["warn", {}, { "usePrettierrc": true }],
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
+    "unicorn/filename-case": 0,
+    "unicorn/prevent-abbreviations": [
+      "error",
+      {
+        "allowList": {},
+        "extendDefaultAllowList": true,
+        "ignore": ["next-env.d"]
+      }
+    ]
+  },
+  "settings": {
+    "tailwindcss": {
+      "config": "./tailwind.config.cjs"
+    }
+  }
+}

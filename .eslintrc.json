@@ -1,12 +1,7 @@
 {
-  "extends": ["arunim", "plugin:@nx/eslint-plugin/recommended"],
-  "overrides": [
-    {
-      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
-      "rules": {
-        "@nx/enforce-module-boundaries": ["error"]
-      }
-    }
-  ],
-  "root": true
+  "extends": ["plugin:@nx/eslint-plugin/javascript", "arunim"],
+  "root": true,
+  "rules": {
+    "unicorn/prefer-module": 0
+  }
 }

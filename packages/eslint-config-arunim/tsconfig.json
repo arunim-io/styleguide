@@ -1,8 +1,5 @@
 {
-  "compilerOptions": {
-    "declaration": true,
-    "allowJs": true,
-    "emitDeclarationOnly": true
-  },
-  "include": ["configs/*.js"]
+  "extends": "../../tsconfig.build.json",
+  "include": ["configs/**/*.js"],
+  "compileOnSave": true
 }

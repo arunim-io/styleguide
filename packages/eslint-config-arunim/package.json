@@ -1,7 +1,7 @@
 {
   "name": "eslint-config-arunim",
   "version": "0.0.0",
-  "main": "./configs/base.js",
+  "main": "./configs/vanilla.js",
   "files": [
     "./configs"
   ],

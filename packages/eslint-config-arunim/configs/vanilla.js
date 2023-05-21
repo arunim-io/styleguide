@@ -1,16 +1,21 @@
 /**
- * This is the base ESLint config. It is used by all other ESLint configs.
+ * @description This is the base ESLint config for vanilla JavaScript. Use it when your project only uses vanilla JavaScript.
+ *
+ * Required packages include:
+ * - eslint-config-prettier
+ * - eslint-plugin-prettier
+ * - eslint-plugin-unicorn
+ * - eslint-plugin-jsonc
+ *
  * @type {import('eslint').ESLint.ConfigData}
  */
 module.exports = {
   env: {
     browser: true,
-    es2021: true,
     node: true,
   },
   extends: [
     'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
     'plugin:unicorn/recommended',
     'plugin:jsonc/recommended-with-jsonc',
@@ -18,25 +23,17 @@ module.exports = {
   ],
   overrides: [
     {
-      files: ['*.cjs'],
-      rules: {
-        '@typescript-eslint/no-var-requires': 0,
-      },
-    },
-    {
       files: ['*.json', '*.json5', '*.jsonc'],
       parser: 'jsonc-eslint-parser',
     },
   ],
-  plugins: ['@typescript-eslint'],
-  root: true,
   rules: {
-    '@typescript-eslint/padding-line-between-statements': [
+    'padding-line-between-statements': [
       'warn',
       {
         blankLine: 'always',
         prev: ['import'],
-        next: ['const', 'function', 'export', 'interface', 'type'],
+        next: ['const', 'function', 'export'],
       },
     ],
     'unicorn/filename-case': [
@@ -49,12 +46,5 @@ module.exports = {
       },
     ],
     'prettier/prettier': ['warn', {}, { usePrettierrc: true }],
-  },
-  settings: {
-    'import/resolver': {
-      typescript: {
-        alwaysTryTypes: true,
-      },
-    },
   },
 };
