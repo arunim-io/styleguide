@@ -1,3 +1,3 @@
 module.exports = {
-  ...require('prettier-config-arunim'),
+  ...require('@arunim.io/prettier-config'),
 };

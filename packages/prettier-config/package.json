@@ -1,0 +1,31 @@
+{
+  "name": "@arunim.io/prettier-config",
+  "description": "Arunim's Prettier Config",
+  "version": "0.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": {
+    "email": "mugdhaarunimahmed2017@gmail.com",
+    "name": "Mugdha Arunim Ahmed",
+    "url": "https://arunim-portfolio.netlify.app/"
+  },
+  "bugs": {
+    "url": "https://github.com/arunim-io/styleguide/issues"
+  },
+  "homepage": "https://github.com/arunim-io/styleguide/tree/master/packages/prettier-config#readme",
+  "keywords": [],
+  "license": "MIT",
+  "repository": {
+    "directory": "packages/prettier-config",
+    "url": "https://github.com/arunim-io/styleguide/tree/master/packages/prettier-config"
+  },
+  "main": "./base.js",
+  "types": "./",
+  "peerDependencies": {
+    "prettier": "^2"
+  },
+  "devDependencies": {
+    "@types/prettier": "^2.7.2"
+  }
+}

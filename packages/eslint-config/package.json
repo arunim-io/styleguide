@@ -1,0 +1,38 @@
+{
+  "name": "@arunim.io/eslint-config",
+  "description": "Arunim's ESLint Config",
+  "version": "0.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": {
+    "email": "mugdhaarunimahmed2017@gmail.com",
+    "name": "Mugdha Arunim Ahmed",
+    "url": "https://arunim-portfolio.netlify.app/"
+  },
+  "bugs": {
+    "url": "https://github.com/arunim-io/styleguide/issues"
+  },
+  "homepage": "https://github.com/arunim-io/styleguide/tree/master/packages/eslint-config#readme",
+  "keywords": [],
+  "license": "MIT",
+  "repository": {
+    "directory": "packages/eslint-config",
+    "url": "https://github.com/arunim-io/styleguide/tree/master/packages/eslint-config"
+  },
+  "main": "./javascript.js",
+  "types": "./",
+  "peerDependencies": {
+    "@typescript-eslint/eslint-plugin": "latest",
+    "@typescript-eslint/parser": "latest",
+    "eslint": "^8",
+    "eslint-config-prettier": "latest",
+    "eslint-plugin-jsonc": "latest",
+    "eslint-plugin-prettier": "latest",
+    "eslint-plugin-unicorn": "latest"
+  },
+  "devDependencies": {
+    "@types/eslint": "~8.37.0",
+    "@typescript-eslint/types": "^5.59.6"
+  }
+}
