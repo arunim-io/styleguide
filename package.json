@@ -9,6 +9,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.6.3",
     "@commitlint/config-conventional": "^17.6.3",
+    "@commitlint/config-nx-scopes": "^17.6.4",
     "@nx/eslint-plugin": "^16.2.1",
     "@nx/workspace": "^16.2.1",
     "@types/node": "^20.2.3",

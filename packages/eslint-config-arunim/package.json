@@ -3,9 +3,6 @@
   "version": "0.0.0",
   "main": "./javascript.js",
   "types": "./",
-  "scripts": {
-    "build": "rimraf ./**/*.d.ts  tsc -p ./"
-  },
   "peerDependencies": {
     "@typescript-eslint/eslint-plugin": "latest",
     "@typescript-eslint/parser": "latest",

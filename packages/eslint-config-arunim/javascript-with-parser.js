@@ -2,7 +2,7 @@
  * @type {import('eslint').ESLint.ConfigData}
  */
 module.exports = {
-  extends: ['./javascript.js'],
+  extends: ['./javascript.js', 'plugin:import/recommended'],
   parserOptions: {
     ecmaFeatures: {
       impliedStrict: true,

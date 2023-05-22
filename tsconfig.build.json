@@ -1,9 +1,0 @@
-{
-  "compilerOptions": {
-    "declaration": true,
-    "allowJs": true,
-    "emitDeclarationOnly": true,
-    "lib": ["ES2015"]
-  },
-  "exclude": ["node_modules"]
-}
