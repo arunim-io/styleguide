@@ -65,6 +65,9 @@ importers:
       '@types/eslint':
         specifier: ~8.37.0
         version: 8.37.0
+      '@typescript-eslint/types':
+        specifier: ^5.59.6
+        version: 5.59.6
 
   packages/prettier-config-arunim:
     dependencies:

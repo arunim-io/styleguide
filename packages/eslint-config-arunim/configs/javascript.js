@@ -1,12 +1,4 @@
 /**
- * @description This is the base ESLint config for vanilla JavaScript. Use it when your project only uses vanilla JavaScript.
- *
- * Required packages include:
- * - eslint-config-prettier
- * - eslint-plugin-prettier
- * - eslint-plugin-unicorn
- * - eslint-plugin-jsonc
- *
  * @type {import('eslint').ESLint.ConfigData}
  */
 module.exports = {

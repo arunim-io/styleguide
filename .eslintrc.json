@@ -2,6 +2,16 @@
   "extends": ["plugin:@nx/eslint-plugin/javascript", "arunim"],
   "root": true,
   "rules": {
-    "unicorn/prefer-module": 0
+    "unicorn/prefer-module": 0,
+    "unicorn/filename-case": [
+      "error",
+      {
+        "cases": {
+          "camelCase": true,
+          "pascalCase": true,
+          "kebabCase": true
+        }
+      }
+    ]
   }
 }
