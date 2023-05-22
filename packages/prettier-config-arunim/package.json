@@ -1,14 +1,11 @@
 {
   "name": "prettier-config-arunim",
   "version": "0.0.0",
-  "main": "./configs/base.js",
-  "types": "./configs",
+  "main": ".//base.js",
+  "types": "./",
   "scripts": {
-    "build": "tsc -p ./"
+    "build": "rimraf ./**/*.d.ts tsc -p ./"
   },
-  "files": [
-    "./configs"
-  ],
   "peerDependencies": {
     "prettier": "^2"
   },

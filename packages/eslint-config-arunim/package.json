@@ -1,13 +1,10 @@
 {
   "name": "eslint-config-arunim",
   "version": "0.0.0",
-  "main": "./configs/javascript.js",
-  "files": [
-    "./configs"
-  ],
-  "types": "./configs",
+  "main": "./javascript.js",
+  "types": "./",
   "scripts": {
-    "build": "tsc -p ./"
+    "build": "rimraf ./**/*.d.ts  tsc -p ./"
   },
   "peerDependencies": {
     "@typescript-eslint/eslint-plugin": "latest",

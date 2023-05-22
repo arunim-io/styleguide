@@ -1,5 +1,5 @@
 {
   "extends": "../../tsconfig.build.json",
-  "include": ["configs/**/*.js"],
+  "include": ["./**/*.js"],
   "compileOnSave": true
 }
