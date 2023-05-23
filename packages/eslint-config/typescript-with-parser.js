@@ -12,7 +12,6 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
-    project: true,
   },
   settings: {
     'import/resolver': {
