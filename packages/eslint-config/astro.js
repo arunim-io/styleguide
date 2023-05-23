@@ -25,4 +25,7 @@ module.exports = {
       },
     ],
   },
+  settings: {
+    'import/core-modules': ['astro:content', 'astro:assets'],
+  },
 };
