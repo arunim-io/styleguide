@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+  workflow_dispatch:
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
@@ -14,8 +15,11 @@ env:
 jobs:
   version:
     name: package versioning
-    timeout-minutes: 15
     runs-on: ubuntu-latest
+    if: |
+      startsWith(github.event.head_commit.message, 'feat') ||
+      startsWith(github.event.head_commit.message, 'fix') ||
+      startsWith(github.event.head_commit.message, 'revert')
     outputs:
       hasChangesets: ${{ steps.changesets.outputs.hasChangesets }}
     steps:
@@ -27,7 +31,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: 'pnpm'
       - name: install pnpm
         run: npm i pnpm@latest -g
       - name: setup pnpm config
