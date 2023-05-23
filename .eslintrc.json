@@ -1,8 +1,5 @@
 {
-  "extends": [
-    "plugin:@nx/eslint-plugin/javascript",
-    "@arunim.io/eslint-config/typescript"
-  ],
+  "extends": ["@arunim.io/eslint-config/typescript"],
   "root": true,
   "rules": {
     "unicorn/prefer-module": 0,
