@@ -1,7 +1,7 @@
 {
   "name": "@arunim.io/prettier-config",
   "description": "Arunim's Prettier Config",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "publishConfig": {
     "access": "public"
   },
