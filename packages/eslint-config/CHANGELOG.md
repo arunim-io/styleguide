@@ -1,5 +1,11 @@
 # @arunim.io/eslint-config
 
+## 0.1.3
+
+### Patch Changes
+
+- Fix extends field in astro config
+
 ## 0.1.2
 
 ### Patch Changes

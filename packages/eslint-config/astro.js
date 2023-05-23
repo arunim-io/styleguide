@@ -2,10 +2,13 @@
  * @type {import('eslint').ESLint.ConfigData}
  */
 module.exports = {
-  extends: ['./typescript-with-parser.js'],
+  extends: [
+    './typescript-with-parser.js',
+    'plugin:astro/recommended',
+    'plugin:astro/jsx-a11y-strict',
+  ],
   overrides: [
     {
-      extends: ['plugin:astro/recommended', 'plugin:astro/jsx-a11y-strict'],
       files: ['*.astro'],
       parserOptions: {
         parser: '@typescript-eslint/parser',
