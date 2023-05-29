@@ -1,5 +1,12 @@
 # @arunim.io/eslint-config
 
+## 0.2.1
+
+### Patch Changes
+
+- e66eb1d: Add config for rules conflicting with svelte & prettier.
+  Add `import/no-unresolved` to svelte config as temporary fix.
+
 ## 0.2.0
 
 ### Minor Changes
