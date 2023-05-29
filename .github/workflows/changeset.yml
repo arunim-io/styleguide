@@ -33,7 +33,7 @@ jobs:
       - name: Publish to npm
         uses: changesets/action@v1
         with:
-          commit: 'ci-publish(release): release packages'
+          commit: 'chore: release packages'
           createGithubReleases: false
           publish: pnpm changeset publish
           version: pnpm changeset version
