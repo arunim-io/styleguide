@@ -12,12 +12,15 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     if: startsWith(github.event.head_commit.message, 'feat') || startsWith(github.event.head_commit.message, 'fix')
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
+          ref: ${{ github.head_ref }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -37,8 +40,7 @@ jobs:
         run: pnpm i
 
       - name: Version packages
-        id: version
-        run: echo ::set-output name=changes::$(pnpx changeset version 2>&1 | grep -q 'No unreleased changesets found' && echo 'false' || echo 'true')I
+        run: pnpm changeset version
 
       - name: Set npm token
         run: npm config set "https://registry.npmjs.org/:_authToken" "${NPM_TOKEN}"
@@ -48,16 +50,7 @@ jobs:
       - name: Publish packages
         run: pnpm changeset publish
 
-      - name: Setup git
-        run: |
-          git config user.name "${GITHUB_ACTOR}"
-          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-        env:
-          GITHUB_ACTOR: ${{ github.actor }}
-
       - name: Commit & push changes to Github
-        if: steps.version.outputs.changes == 'true'
-        run: |
-          git add .
-          git commit -m "chore(release): version & publish packages"
-          git push
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: 'chore(release): Publish packages'
