@@ -16,11 +16,17 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: lts/*
+          registry-url: 'https://registry.npmjs.org'
+          scope: '@arunim.io'
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Setup Pnpm
         uses: pnpm/action-setup@v2
@@ -30,21 +36,28 @@ jobs:
       - name: Install Dependencies
         run: pnpm i
 
+      - name: Version packages
+        id: version
+        run: echo ::set-output name=changes::$(pnpx changeset version 2>&1 | grep -q 'No unreleased changesets found' && echo 'false' || echo 'true')I
+
       - name: Set npm token
-        run: npm config set "//registry.npmjs.org/:_authToken" "${NPM_TOKEN}"
+        run: npm config set "https://registry.npmjs.org/:_authToken" "${NPM_TOKEN}"
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Publish to npm registry
-        uses: changesets/action@v1
-        with:
-          commit: 'chore: release packages'
-          createGithubReleases: false
-          publish: pnpm changeset publish
-          version: pnpm changeset version
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Publish packages
+        run: pnpm changeset publish
 
-      - name: Push changes to Github
-        run: git push
+      - name: Setup git
+        run: |
+          git config user.name "${GITHUB_ACTOR}"
+          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+        env:
+          GITHUB_ACTOR: ${{ github.actor }}
+
+      - name: Commit & push changes to Github
+        if: steps.version.outputs.changes == 'true'
+        run: |
+          git add .
+          git commit -m "chore(release): version & publish packages"
+          git push
