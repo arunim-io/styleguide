@@ -30,7 +30,12 @@ jobs:
       - name: Install Dependencies
         run: pnpm i
 
-      - name: Publish to npm
+      - name: Set npm token
+        run: npm config set "//registry.npmjs.org/:_authToken" "${NPM_TOKEN}"
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish to npm registry
         uses: changesets/action@v1
         with:
           commit: 'chore: release packages'
